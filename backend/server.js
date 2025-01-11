@@ -85,7 +85,7 @@ const openai = new OpenAI({
 
 ///======[AUTH]======///
 
-app.post('/api/api/login', async (req, res) => {
+app.post('/api/login', async (req, res) => {
     const { uname, pwd } = req.body;
 
     try {
