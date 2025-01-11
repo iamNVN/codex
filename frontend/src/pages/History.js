@@ -13,7 +13,7 @@ const History = () => {
 
     useEffect(() => {
       // Fetch user details and historiesS
-      fetch(`${process.env.HOST_URL}/api/home`, {
+      fetch(`${process.env.REACT_APP_HOST_URL}/api/home`, {
           method: 'GET',
           credentials: 'include', // Include session cookies
           headers: {
@@ -40,7 +40,7 @@ const History = () => {
       });
   
       // Fetch histories
-      fetch(`${process.env.HOST_URL}/api/history`, {
+      fetch(`${process.env.REACT_APP_HOST_URL}/api/history`, {
           method: 'POST',
           credentials: 'include', // Include session cookies
           headers: {
@@ -58,8 +58,8 @@ const History = () => {
               histories.map((item, index) => ({
                   id: histories.length - index, // Serial number
                   dateTime: new Date(item.dateTime).toLocaleString(),
-                  code: <a href={`${process.env.HOST_URL}/api/getCode/${item._id}`} target="_blank" rel="noopener noreferrer">View Code</a>,
-                  review: <a href={`${process.env.HOST_URL}/api/getReview/${item._id}`} target="_blank" rel="noopener noreferrer">View Review</a>,
+                  code: <a href={`${process.env.REACT_APP_HOST_URL}/api/getCode/${item._id}`} target="_blank" rel="noopener noreferrer">View Code</a>,
+                  review: <a href={`${process.env.REACT_APP_HOST_URL}/api/getReview/${item._id}`} target="_blank" rel="noopener noreferrer">View Review</a>,
                   bugsFound: item.bugs,
                   rating: item.rating,
               }))

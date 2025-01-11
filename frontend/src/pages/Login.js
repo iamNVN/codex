@@ -31,7 +31,7 @@ const Login = () => {
 
     useEffect(() => {
         // Fetch user session data
-        fetch(`${process.env.HOST_URL}/api/home`, {
+        fetch(`${process.env.REACT_APP_HOST_URL}/api/home`, {
             method: 'GET',
             credentials: 'include',
             headers: {
@@ -69,7 +69,7 @@ const Login = () => {
                 <div className={styles.shape}></div>
                 <div className={styles.shape}></div>
             </div>
-            <form action={`${process.env.HOST_URL}/api/login`}  method="post" className={styles.login_form}>
+            <form action={`${process.env.REACT_APP_HOST_URL}/api/login`}  method="post" className={styles.login_form}>
                 <h3>Login</h3>
                 {error && <span className={styles.error_msg}>{error}</span>}
                 <input

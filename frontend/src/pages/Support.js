@@ -41,7 +41,7 @@ const Settings = () => {
         const message = e.target.message.value;
 
         try {
-            const response = await fetch(`${process.env.HOST_URL}/api/support`, {
+            const response = await fetch(`${process.env.REACT_APP_HOST_URL}/api/support`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
@@ -95,7 +95,7 @@ const Settings = () => {
 
     useEffect(() => {
         // Fetch user details and histories
-        fetch(`${process.env.HOST_URL}/api/home`, {
+        fetch(`${process.env.REACT_APP_HOST_URL}/api/home`, {
             method: 'GET',
             credentials: 'include', // Include session cookies
             headers: {

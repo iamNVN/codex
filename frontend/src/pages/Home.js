@@ -40,7 +40,7 @@ const Home = () => {
     const language = e.target.lang.value;
 
     try {
-      const response = await fetch(`${process.env.HOST_URL}/api/analyze`, {
+      const response = await fetch(`${process.env.REACT_APP_HOST_URL}/api/analyze`, {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -70,7 +70,7 @@ const Home = () => {
   const { username, setUsername } = useContext(UserContext);
 
   useEffect(() => {
-    fetch(`${process.env.HOST_URL}/api/home`, {
+    fetch(`${process.env.REACT_APP_HOST_URL}/api/home`, {
       method: 'GET',
       credentials: 'include', // Include session cookies
       headers: {
