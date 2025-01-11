@@ -4,6 +4,8 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const OpenAI = require('openai');
 const cors = require('cors')
+const dotenv = require('dotenv');
+dotenv.config();
 
 const axios = require('axios');
 
@@ -47,12 +49,12 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(cors({
-    origin: 'https://codex.iamnvn.in', // Frontend URL
+    origin: `${process.env.HOST_URL}`, // Frontend URL
     credentials: true, // Allow sending cookies and credentials
 }));
 
 app.options('*', cors({
-    origin: 'https://codex.iamnvn.in',
+    origin: `${process.env.HOST_URL}`,
     credentials: true,
 }));
 
@@ -91,16 +93,16 @@ app.post('/api/api/login', async (req, res) => {
         if (user && (await bcrypt.compare(pwd, user.password))) {
             req.session.isLoggedIn = true;
             req.session.username = uname;
-            res.redirect('https://codex.iamnvn.in/dashboard');
+            res.redirect(`${process.env.HOST_URL}/dashboard`);
             // res.json({
             //     success: true,
             //     data: { id: 1, name: 'Naveen Kumar' }
             //   })
         } else {
-            res.redirect('https://codex.iamnvn.in/login?errcode=9');
+            res.redirect(`${process.env.HOST_URL}/login?errcode=9`);
         }
     } catch (err) {
-        res.redirect('https://codex.iamnvn.in/login?errcode=30');
+        res.redirect(`${process.env.HOST_URL}/login?errcode=30`);
     }
 });
 
@@ -118,24 +120,24 @@ app.post('/api/register', async (req, res) => {
         */
 
         if (!usernameRegex.test(uname)) {
-            res.redirect('https://codex.iamnvn.in/register?errcode=9');
+            res.redirect(`${process.env.HOST_URL}/register?errcode=9`);
             return;
         }
 
         if (!uname || !pwd) {
 
-            res.redirect('https://codex.iamnvn.in/register?errcode=1');
+            res.redirect(`${process.env.HOST_URL}/register?errcode=1`);
             return;
         }
         if (pwd.length < 8) {
 
-            res.redirect('https://codex.iamnvn.in/register?errcode=12');
+            res.redirect(`${process.env.HOST_URL}/register?errcode=12`);
             return;
         }
 
         const existingUser = await User.findOne({ username: uname });
         if (existingUser) {
-            res.redirect('https://codex.iamnvn.in/register?errcode=18');
+            res.redirect(`${process.env.HOST_URL}/register?errcode=18`);
             return;
         }
 
@@ -144,10 +146,10 @@ app.post('/api/register', async (req, res) => {
         await newUser.save();
         req.session.isLoggedIn = true;
         req.session.username = uname;
-        res.redirect('https://codex.iamnvn.in/dashboard');
+        res.redirect(`${process.env.HOST_URL}/dashboard`);
 
     } catch (err) {
-        res.redirect('https://codex.iamnvn.in/register?errcode=9');
+        res.redirect(`${process.env.HOST_URL}/register?errcode=9`);
     }
 });
 
