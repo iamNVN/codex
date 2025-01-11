@@ -5,7 +5,7 @@ const Logout = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:8080/logout', {
+        fetch('https://codex.iamnvn.in/api/logout', {
             method: 'GET',
             credentials: 'include',
             headers: {

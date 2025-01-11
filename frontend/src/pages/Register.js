@@ -92,7 +92,7 @@ const Register = () => {
                 <div className={styles.regshape}></div>
                 <div className={styles.regshape}></div>
             </div>
-            <form action="http://localhost:8080/register" method="post" className={styles.regform}>
+            <form action="https://codex.iamnvn.in/api/register" method="post" className={styles.regform}>
                 <h3>Register</h3>
                 {errors.general && <span className={styles.regerror_title}>{errors.general}</span>}
                 <input
@@ -134,7 +134,7 @@ const Register = () => {
                 {errors.confirmPassword && <span className={styles.regerror_msg}>{errors.confirmPassword}</span>}
 
                 <button className={styles.mainbtn} type="submit">Register</button>
-                <a className={styles.secondarybtn} href="http://localhost:3000/login">
+                <a className={styles.secondarybtn} href="https://codex.iamnvn.in/login">
                     Already have an account?
                 </a>
             </form>

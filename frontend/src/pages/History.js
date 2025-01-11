@@ -13,7 +13,7 @@ const History = () => {
 
     useEffect(() => {
       // Fetch user details and histories
-      fetch('http://localhost:8080/home', {
+      fetch('https://codex.iamnvn.in/api/home', {
           method: 'GET',
           credentials: 'include', // Include session cookies
           headers: {
@@ -40,7 +40,7 @@ const History = () => {
       });
   
       // Fetch histories
-      fetch('http://localhost:8080/history', {
+      fetch('https://codex.iamnvn.in/api/history', {
           method: 'POST',
           credentials: 'include', // Include session cookies
           headers: {
@@ -58,8 +58,8 @@ const History = () => {
               histories.map((item, index) => ({
                   id: histories.length - index, // Serial number
                   dateTime: new Date(item.dateTime).toLocaleString(),
-                  code: <a href={`http://localhost:8080/getCode/${item._id}`} target="_blank" rel="noopener noreferrer">View Code</a>,
-                  review: <a href={`http://localhost:8080/getReview/${item._id}`} target="_blank" rel="noopener noreferrer">View Review</a>,
+                  code: <a href={`https://codex.iamnvn.in/api/getCode/${item._id}`} target="_blank" rel="noopener noreferrer">View Code</a>,
+                  review: <a href={`https://codex.iamnvn.in/api/getReview/${item._id}`} target="_blank" rel="noopener noreferrer">View Review</a>,
                   bugsFound: item.bugs,
                   rating: item.rating,
               }))

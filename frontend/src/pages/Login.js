@@ -31,7 +31,7 @@ const Login = () => {
 
     useEffect(() => {
         // Fetch user session data
-        fetch('http://localhost:8080/home', {
+        fetch('https://codex.iamnvn.in/api/home', {
             method: 'GET',
             credentials: 'include',
             headers: {
@@ -69,7 +69,7 @@ const Login = () => {
                 <div className={styles.shape}></div>
                 <div className={styles.shape}></div>
             </div>
-            <form action="http://localhost:8080/login" method="post" className={styles.login_form}>
+            <form action="https://codex.iamnvn.in/api/login" method="post" className={styles.login_form}>
                 <h3>Login</h3>
                 {error && <span className={styles.error_msg}>{error}</span>}
                 <input
