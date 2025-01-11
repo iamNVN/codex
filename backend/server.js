@@ -414,4 +414,4 @@ app.post('/api/analyze', async (req, res) => {
 
 console.log("Deployment completed");
 
-app.listen();
+app.listen(8080);
