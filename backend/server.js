@@ -11,7 +11,7 @@ const bcrypt = require('bcrypt');
 const app = express();
 
 // MongoDB Connection
-mongoose.connect("mongodb://127.0.0.1:27017/codex", {
+mongoose.connect("mongodb+srv://admin:fO11gXrkF5cjPigh@codex.11ixb.mongodb.net/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -44,6 +44,7 @@ const History = mongoose.model('History', historySchema);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(cors({
     origin: 'https://codex.iamnvn.in', // Frontend URL
