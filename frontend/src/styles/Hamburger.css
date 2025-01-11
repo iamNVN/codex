@@ -1,0 +1,74 @@
+.menu-icon {
+  top: 8px;
+  font-size: 2rem;
+  background: none;
+  position: relative;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 9999;
+  /* Higher than the overlay */
+}
+
+@keyframes rollIn {
+  0% {
+    transform: translateY(-10%);
+    /* Start off-screen */
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    /* End at the top of the screen */
+    opacity: 1;
+  }
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 4, 8, 0.53);
+  backdrop-filter: blur(20px);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  transform: translateY(-100%);
+  animation: rollIn 0.2s forwards;
+  z-index: 9998;
+}
+
+.menu-overlay ul {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
+
+.menu-overlay ul li {
+  margin: 32px 0;
+}
+
+.menu-overlay ul li a {
+  color: white;
+  font-size: 2.3rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu-overlay ul li a:hover {
+  color: #ff6347;
+  /* Add hover effect color */
+}
+
+
+@media (min-width: 768px) {
+  .hamburger-menu {
+    display: none !important;
+  }
+}

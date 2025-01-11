@@ -1,0 +1,240 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.settingsHome {
+    background: linear-gradient(45deg,
+            hsl(247, 44%, 5%),
+            hsl(247, 35%, 7%),
+            hsl(247, 39%, 18%));
+    height: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow: auto;
+
+}
+
+
+.settings_card * {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.Supportcont {
+    
+  animation: fadeIn 0.2s ease forwards;
+}
+.loader {
+    width: 14px;
+    height: 14px;
+    border: 3px solid #080710;
+    border-bottom-color: transparent;
+    display: inline-block;
+    border-radius: 50%;
+    margin-bottom: -1px;
+    margin-right: 12px;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+  
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+
+.settings_input {
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    border: none;
+    width: 64%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 0 20px;
+    transition: 0.2s;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.settings_input:disabled {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 2px solid rgba(255, 255, 255, 0.07);;
+}
+.settings_input:focus {
+    outline: none !important;
+    border: 2px solid #ffffff2b;
+  }
+.settings_label {
+    font-weight: bold;
+    margin-right: 30px;
+    margin-top: 11px;
+    font-size: 17px;
+    text-align: right;
+    width: 100px;
+}
+
+.settings_input::placeholder {
+    color: #e5e5e5;
+}
+
+
+.savebtn{
+    margin-top: 35px !important;
+    width: 180px;
+    margin: auto;
+    background-color: #ffffff;
+    color: #080710;
+    font-family: 'Poppins';
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.savebtn:hover {
+    background-color: #d2d2d2;
+}
+
+.settings_formgrp{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.settingsFormTable{
+    margin: auto;
+    width: 50%;
+}
+
+.error_title {
+    color: rgb(255, 7, 7);
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 24px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.settings_card {
+    height: 100%;
+    width: 98%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.13);
+    margin-top: 10px;
+    border-radius: 24px;
+    border-spacing: 0;
+    backdrop-filter: blur(20px);
+    border: 3px solid #ffffff2b;
+    animation: fadeIn 0.2s ease forwards;
+}
+
+p {
+    margin: 0;
+}
+
+
+.support_textarea {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    color: white;
+    margin-top: -16px;
+    font-size: 14px;
+    resize: none;
+    border: none;
+    padding: 20px;
+    width: 70%;
+    font-weight: 300;
+    transition: 0.2s;
+  }
+  
+  .support_textarea {
+    border-radius: 12px;
+    overflow-y: auto;
+  }
+  
+  .support_textarea::placeholder {
+    color: #c8c8c8;
+  }
+  
+  .support_textarea::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .support_textarea::-webkit-scrollbar-thumb {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  .support_textarea::-webkit-scrollbar-track {
+    background: #888;
+    border-radius: 10px;
+    border-top-right-radius: 12px;
+    /* Rounded only on the right */
+    border-bottom-right-radius: 12px;
+    /* Rounded only on the right */
+  }
+  
+  .support_textarea:focus {
+    outline: none !important;
+    border: 2px solid #ffffff2b;
+  }
+  
+
+.span_title {
+    font-size: 14px;
+}
+
+.span_value {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+code {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 8px;
+}
+
+
+
+tr th {
+    height: 40px;
+    border-bottom: 2px solid #ffffff14;
+}
+
+tr td {
+    height: 80px;
+}
+
+tr td,
+tr th {
+    padding: 10px;
+    text-align: center;
+    border-right: 2px solid #ffffff14;
+}
+
+tr th {
+    padding: 5px 20px;
+}
+
+tr td:last-child,
+tr th:last-child {
+    border-right: none;
+}

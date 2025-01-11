@@ -1,0 +1,356 @@
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.BodyHome {
+  background: linear-gradient(45deg,
+          hsl(247, 44%, 5%),
+          hsl(247, 35%, 7%),
+          hsl(247, 39%, 18%));
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+
+}
+
+
+.home_form {
+  float: left;
+  height: 500px;
+  width: 800px;
+  background-color: rgba(255, 255, 255, 0.13);
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  /* box-shadow: 0 0 40px #0F202710; */
+  padding: 40px 30px;
+  padding-bottom: 50px;
+  animation: fadeIn 0.2s ease forwards;
+
+}
+
+.home_form *,
+.feedback * {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  border: none;
+}
+
+.home_textarea {
+  width: calc(100% - 40px);
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  margin-top: -16px;
+  font-size: 14px;
+  resize: none;
+  padding: 20px;
+  max-width: 780px;
+  font-weight: 300;
+  transition: 0.2s;
+}
+
+.home_textarea {
+  border-radius: 12px;
+  overflow-y: auto;
+}
+
+.home_textarea::placeholder {
+  color: #c8c8c8;
+}
+
+.home_textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.home_textarea::-webkit-scrollbar-thumb {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.home_textarea::-webkit-scrollbar-track {
+  background: #888;
+  border-radius: 10px;
+  border-top-right-radius: 12px;
+  /* Rounded only on the right */
+  border-bottom-right-radius: 12px;
+  /* Rounded only on the right */
+}
+
+.home_textarea:focus {
+  outline: none !important;
+  border: 2px solid #ffffff2b;
+}
+
+.welcometxt {
+  color: rgba(255, 255, 255, 0.832);
+  font-weight: 300;
+  letter-spacing: 0.3;
+  text-align: center;
+  font-size: 18px;
+  margin-left: 60px;
+  margin-top: 30px;
+}
+
+.analyze {
+  width: 80%;
+  background-color: #ffffff;
+  color: #080710;
+  padding: 15px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.analyze:disabled {
+  background-color: #d2d2d2;
+  cursor:default;
+}
+.analyze:hover {
+  background-color: #d2d2d2;
+}
+
+.loader {
+  width: 14px;
+  height: 14px;
+  border: 3px solid #080710;
+  border-bottom-color: transparent;
+  display: inline-block;
+  border-radius: 50%;
+  margin-bottom: -1px;
+  margin-right: 8px;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+
+/* 
+  .loader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    animation: pulsOut 1.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.75));
+  }
+  .loader:before {
+    width: 100%;
+    padding-bottom: 100%;
+    box-shadow: inset 0 0 0 1rem #fff;
+    animation-name: pulsIn;
+  }
+  .loader:after {
+    width: calc(100% - 2rem);
+    padding-bottom: calc(100% - 2rem);
+    box-shadow: 0 0 0 0 #fff;
+  }
+
+  @keyframes pulsIn {
+    0% {
+      box-shadow: inset 0 0 0 1rem #fff;
+      opacity: 1;
+    }
+    50%, 100% {
+      box-shadow: inset 0 0 0 0 #fff;
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulsOut {
+    0%, 50% {
+      box-shadow: 0 0 0 0 #fff;
+      opacity: 0;
+    }
+    100% {
+      box-shadow: 0 0 0 1rem #fff;
+      opacity: 1;
+    }
+  }
+       */
+
+.error_title {
+  color: rgb(255, 7, 7);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  margin-right: 24px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.feedback {
+  float: right;
+  height: 500px;
+  width: 480px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  /* box-shadow: 0 0 40px #0F202710; */
+  padding: 40px 35px;
+  padding-bottom: 50px;
+  animation: fadeIn 0.2s ease forwards;
+}
+
+p {
+  margin: 0;
+}
+
+.custom_textarea {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  margin-top: -16px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  resize: none;
+  padding-top: 50px !important;
+  padding: 20px;
+  overflow-wrap: break-word;
+  max-width: 780px;
+  font-weight: 300;
+  transition: 0.2s;
+  line-height: 1.7;
+  /* Ensures that line height is set for multi-line content */
+  height: 470px;
+  /* 21 rows with an approx line height of 1.2em */
+  overflow-y: auto;
+  /* Enable vertical scroll if content overflows */
+  white-space: pre-wrap;
+  /* Preserve line breaks */
+  word-wrap: break-word;
+  /* Prevent horizontal overflow by wrapping long words */
+  outline: none;
+  /* To avoid default focus styles */
+  user-select: text;
+  /* Allow text selection */
+  box-sizing: border-box;
+  /* Ensure padding is included in total width/height */
+}
+
+/* Custom scrollbar styles */
+.custom_textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom_textarea::-webkit-scrollbar-thumb {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom_textarea::-webkit-scrollbar-track {
+  background: #888;
+  border-radius: 10px;
+}
+
+
+.custom_textarea:focus {
+  outline: none !important;
+  border: 2px solid #ffffff2b;
+}
+
+.lang,
+.lang * {
+  color: #080710;
+}
+
+.lang {
+
+  background-color: rgba(255, 255, 255, 0.27);
+  color: #eaf0fb;
+  padding: 15px 20px;
+  font-size: 14px;
+
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+
+}
+
+.lang:focus {
+  outline: none;
+}
+
+.feedback h3 {
+  font-size: 18px;
+  color: #ffffffe8;
+  text-align: left;
+  margin-top: -16px;
+  margin-bottom: 26px;
+}
+
+.span_title {
+  font-size: 14px;
+}
+
+.span_value {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+
+
+@media (max-width: 768px) {
+  .flexhome{
+    flex-direction: column;
+    margin-right: 20px !important;
+    margin: 0 20px;
+    margin-top: 30px !important;
+    padding-bottom: 40px;
+  }
+  .BodyHome {
+    display: inline-block;
+    height: 100%;
+    padding: 10px 20px;
+  }
+  
+  .home_form {
+    width: 450px;
+    margin: auto;
+  }
+
+  .feedback {
+    width: 450px;
+    height: 390px;
+    margin-top: 40px;
+  }
+
+  .custom_textarea {
+    height: 360px;
+    margin-bottom: 12px;
+  }
+}  

@@ -1,0 +1,201 @@
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.HistoryHome {
+  background: linear-gradient(45deg,
+          hsl(247, 44%, 5%),
+          hsl(247, 35%, 7%),
+          hsl(247, 39%, 18%));
+  height: 100%;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  overflow: auto;
+
+}
+
+
+.history_card * {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #fff;
+  border-bottom-color: transparent;
+  display: block;
+  border-radius: 50%;
+  margin: 150px auto;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+
+
+.error_title {
+  color: rgb(255, 7, 7);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  margin-right: 24px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.history_card {
+  height: 100%;
+  width: 98%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.13);
+  margin-top: 10px;
+  border-radius: 24px;
+  border-spacing: 0;
+  backdrop-filter: blur(20px);
+  border: 3px solid #ffffff2b;
+  animation: fadeIn 0.2s ease forwards;
+}
+
+p {
+  margin: 0;
+}
+
+.custom_textarea {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  margin-top: -16px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  resize: none;
+  padding-top: 50px !important;
+  padding: 20px;
+  overflow-wrap: break-word;
+  max-width: 780px;
+  font-weight: 300;
+  transition: 0.2s;
+  line-height: 1.7;
+  height: 470px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  outline: none;
+  user-select: text;
+  box-sizing: border-box;
+}
+
+.custom_textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom_textarea::-webkit-scrollbar-thumb {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom_textarea::-webkit-scrollbar-track {
+  background: #888;
+  border-radius: 10px;
+}
+
+
+.custom_textarea:focus {
+  outline: none !important;
+  border: 2px solid #ffffff2b;
+}
+
+.lang,
+.lang * {
+  color: #080710;
+}
+
+.lang {
+
+  background-color: rgba(255, 255, 255, 0.27);
+  color: #eaf0fb;
+  padding: 15px 20px;
+  font-size: 14px;
+
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+
+}
+
+.lang:focus {
+  outline: none;
+}
+
+.history_card h3 {
+  font-size: 18px;
+  color: #ffffffe8;
+  text-align: left;
+  margin-top: -16px;
+  margin-bottom: 26px;
+}
+
+.span_title {
+  font-size: 14px;
+}
+
+.span_value {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+
+
+ tr th {
+  height: 40px;
+  border-bottom: 2px solid #ffffff14;
+}
+ tr td {
+  height: 80px;
+}
+
+ tr td,  tr th{
+  padding: 10px;
+  text-align: center;
+  border-right: 2px solid #ffffff14;
+}
+
+tr th {
+  padding: 5px 20px;
+}
+
+ tr td:last-child,  tr th:last-child{
+  border-right: none;
+}
+
+
+@media (max-width: 768px) {
+  .HistoryHome {
+    display: inline-block;
+    height: 100%;
+    padding: 10px 20px;
+  }
+}
