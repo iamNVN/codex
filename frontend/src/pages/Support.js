@@ -41,7 +41,7 @@ const Settings = () => {
         const message = e.target.message.value;
 
         try {
-            const response = await fetch('https://codex.iamnvn.in/api/support', {
+            const response = await fetch(`${process.env.HOST_URL}/api/support`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
@@ -95,7 +95,7 @@ const Settings = () => {
 
     useEffect(() => {
         // Fetch user details and histories
-        fetch('https://codex.iamnvn.in/api/home', {
+        fetch(`${process.env.HOST_URL}/api/home`, {
             method: 'GET',
             credentials: 'include', // Include session cookies
             headers: {

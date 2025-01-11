@@ -13,7 +13,7 @@ const Settings = () => {
 
     useEffect(() => {
         // Fetch user details and histories
-        fetch('https://codex.iamnvn.in/api/home', {
+        fetch(`${process.env.HOST_URL}/api/home`, {
             method: 'GET',
             credentials: 'include', // Include session cookies
             headers: {
@@ -40,7 +40,7 @@ const Settings = () => {
             });
 
         // Fetch histories
-        fetch('https://codex.iamnvn.in/api/api/settings', {
+        fetch(`${process.env.HOST_URL}/api/api/settings`, {
             method: 'GET',
             credentials: 'include', // Include session cookies
             headers: {

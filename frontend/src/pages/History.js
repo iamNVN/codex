@@ -12,8 +12,8 @@ const History = () => {
 
 
     useEffect(() => {
-      // Fetch user details and histories
-      fetch('https://codex.iamnvn.in/api/home', {
+      // Fetch user details and historiesS
+      fetch(`${process.env.HOST_URL}/api/home`, {
           method: 'GET',
           credentials: 'include', // Include session cookies
           headers: {
@@ -40,7 +40,7 @@ const History = () => {
       });
   
       // Fetch histories
-      fetch('https://codex.iamnvn.in/api/history', {
+      fetch(`${process.env.HOST_URL}/api/history`, {
           method: 'POST',
           credentials: 'include', // Include session cookies
           headers: {
@@ -58,8 +58,8 @@ const History = () => {
               histories.map((item, index) => ({
                   id: histories.length - index, // Serial number
                   dateTime: new Date(item.dateTime).toLocaleString(),
-                  code: <a href={`https://codex.iamnvn.in/api/getCode/${item._id}`} target="_blank" rel="noopener noreferrer">View Code</a>,
-                  review: <a href={`https://codex.iamnvn.in/api/getReview/${item._id}`} target="_blank" rel="noopener noreferrer">View Review</a>,
+                  code: <a href={`${process.env.HOST_URL}/api/getCode/${item._id}`} target="_blank" rel="noopener noreferrer">View Code</a>,
+                  review: <a href={`${process.env.HOST_URL}/api/getReview/${item._id}`} target="_blank" rel="noopener noreferrer">View Review</a>,
                   bugsFound: item.bugs,
                   rating: item.rating,
               }))

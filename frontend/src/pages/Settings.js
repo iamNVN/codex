@@ -13,7 +13,7 @@ const Settings = () => {
 
     useEffect(() => {
         // Fetch user details and histories
-        fetch('https://codex.iamnvn.in/api/home', {
+        fetch(`${process.env.HOST_URL}/api/home`, {
             method: 'GET',
             credentials: 'include', // Include session cookies
             headers: {
@@ -39,36 +39,7 @@ const Settings = () => {
                 console.error('Error:', error);
             });
 
-        // Fetch histories
-        fetch('https://codex.iamnvn.in/api/api/settings', {
-            method: 'GET',
-            credentials: 'include', // Include session cookies
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch histories');
-                }
-                return response.json();
-            })
-            .then((histories) => {
-                setTableData(
-                    histories.map((item, index) => ({
-                        id: histories.length - index, // Serial number
-                        dateTime: new Date(item.dateTime).toLocaleString(),
-                        code: <a href={`https://codex.iamnvn.in/api/getCode/${item._id}`} target="_blank" rel="noopener noreferrer">View Code</a>,
-                        review: <a href={`https://codex.iamnvn.in/api/getReview/${item._id}`} target="_blank" rel="noopener noreferrer">View Review</a>,
-                        bugsFound: item.bugs,
-                        rating: item.rating,
-                    }))
-                );
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error('Error fetching histories:', error);
-            });
+        
     }, [navigate]);
 
 
