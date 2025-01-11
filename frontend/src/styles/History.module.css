@@ -78,7 +78,7 @@ p {
 }
 
 .custom_textarea {
-  width: 100%;
+  width: auto;
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 16px;
   margin-top: -16px;
