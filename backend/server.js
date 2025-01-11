@@ -63,6 +63,10 @@ app.use(
         secret: 'a1b7c3d1e5',
         resave: false,
         saveUninitialized: true,
+        cookie: {
+            secure: true, // Use true in production with HTTPS
+            sameSite: 'none', // Required for cross-origin cookies
+          },
     })
 );
 
