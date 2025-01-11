@@ -412,4 +412,6 @@ app.post('/api/analyze', async (req, res) => {
 
 });
 
+console.success("App is Running");
+
 app.listen();
