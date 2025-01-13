@@ -10,7 +10,7 @@ const HamburgerMenu = () => {
   return (
     <div className="hamburger-menu">
       <div className='menu-icon'>
-          <Hamburger toggled={isOpen} toggle={setOpen} color="#fff"/>
+          <Hamburger toggled={isOpen} toggle={setOpen} color="#fff" size={24  }/>
       </div>
 
       {isOpen && (

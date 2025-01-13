@@ -138,3 +138,21 @@
     margin-left: 8px;
     display: block;
 }
+@media (max-width: 768px) {
+    .login_form {
+        width: 70%;
+        padding: 40px 25px;
+    }
+    .login_input {
+        width: 85%;
+    }
+    .login {
+        width: 97%;
+    }
+    .register {
+        width: 97%;
+    }
+    .background {
+        overflow-x: clip;
+    }
+    }

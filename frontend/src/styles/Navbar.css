@@ -60,13 +60,19 @@
       display: none !important;
     }
     .navbar {
-      padding: 20px 30px;
+      
+      background-color: transparent;
+      box-shadow: none;
+      padding: 20px 14px;
     }
     .navbar .title {
-      font-size: 32px;
+      font-size: 24px;
       margin-left: 4px;
     }
+    .titlegrp {
+      margin-left: 8px;
+    }
     .navbar .subtitle {
-      font-size: 9px;
+      font-size: 7px;
     }
   }  

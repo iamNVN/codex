@@ -111,7 +111,7 @@
 }
 
 .settings_formgrp{
-    width: auto;
+    width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 50px;
@@ -147,6 +147,12 @@
 
 p {
     margin: 0;
+}
+
+.inputFlexgrp {
+    display: flex;
+    flex-direction: row;
+    padding: 0 110px;
 }
 
 
@@ -238,3 +244,44 @@ tr td:last-child,
 tr th:last-child {
     border-right: none;
 }
+
+.formDiv {
+    color: #fff;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+
+    .settingsHome {
+      height: 100%;
+      padding: 10px 20px;
+    }
+    .inputFlexgrp {
+        display: flex;
+        flex-direction: column;
+        padding: 0 0px;
+    }
+    .settings_label {
+        font-size: 16px;
+        text-align: left;
+    }
+    .settings_formgrp{
+        margin-top: 40px !important;
+        flex-direction: column;
+        
+    }
+    .settings_input {
+        margin-top: 16px;
+        width: auto !important;
+    }
+    .support_textarea {
+        width: auto;
+        margin-top: 4px;
+    }
+    .Supportcont{
+        padding-bottom: 50px !important;
+    }
+  }  

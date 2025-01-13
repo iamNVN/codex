@@ -146,3 +146,21 @@
     margin-bottom: 8px;
     display: block;
 }
+@media (max-width: 768px) {
+    .regform {
+        width: 70%;
+        padding: 40px 25px;
+    }
+    .reg_input {
+        width: 85%;
+    }
+    .mainbtn {
+        width: 97%;
+    }
+    .secondarybtn {
+        width: 97%;
+    }
+    .regbackground {
+        overflow-x: clip;
+    }
+    }

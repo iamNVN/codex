@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div>
+      <div className='titlegrp'>
         <div className="title">CodeX</div>
         <span className="subtitle">AI-Powered Code Reviewer</span>
       </div>

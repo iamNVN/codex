@@ -98,50 +98,52 @@ const History = () => {
   return (
     <div className={styles.HistoryHome}>
       <Navbar />
-    
+
       <h1 style={{ textAlign: "center", color: "white" }}>History</h1>
+
+
       
-    
-        <div style={{ padding: "20px" }}>
-          
-        <div className={styles.loader} style={{display: loading ? 'block' : 'none'}}></div>
-      <table className={styles.history_card} style={{display: loading ? 'None' : 'table'}}>
-        <thead>
-          <tr style={{backgroundColor: "rgba(5, 5, 5, 0.09)"}}>
-            <th onClick={() => sortTable("id")} style={{cursor: "pointer"}}>
-              S.No {getSortIcon("id")}
-            </th>
-            <th onClick={() => sortTable("dateTime")} style={{cursor: "pointer"}} >
-              Date Time {getSortIcon("dateTime")}
-            </th>
-            <th >
-              Code
-            </th>
-            <th  >
-              Review
-            </th>
-            <th onClick={() => sortTable("bugsFound")} style={{cursor: "pointer"}} >
-              Bugs Found {getSortIcon("bugsFound")}
-            </th>
-            <th onClick={() => sortTable("rating")} style={{cursor: "pointer"}} >
-              Rating {getSortIcon("rating")}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {tableData.map((row, index) => (
-            <tr key={index}>
-              <td>{row.id}</td>
-              <td>{row.dateTime}</td>
-              <td>{row.code}</td>
-              <td>{row.review}</td>
-              <td>{row.bugsFound}</td>
-              <td>{row.rating}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+
+        <div className={styles.loader} style={{ display: loading ? 'block' : 'none' }}></div>
+       
+          <div className={styles.tablecontainer}>
+            <table className={styles.history_card} style={{ display: loading ? 'None' : 'table' }}>
+              <thead>
+                <tr style={{ backgroundColor: "rgba(5, 5, 5, 0.09)" }}>
+                  <th onClick={() => sortTable("id")} style={{ cursor: "pointer" }}>
+                    S.No {getSortIcon("id")}
+                  </th>
+                  <th onClick={() => sortTable("dateTime")} style={{ cursor: "pointer" }} >
+                    Date Time {getSortIcon("dateTime")}
+                  </th>
+                  <th >
+                    Code
+                  </th>
+                  <th  >
+                    Review
+                  </th>
+                  <th onClick={() => sortTable("bugsFound")} style={{ cursor: "pointer" }} >
+                    Bugs Found {getSortIcon("bugsFound")}
+                  </th>
+                  <th onClick={() => sortTable("rating")} style={{ cursor: "pointer" }} >
+                    Rating {getSortIcon("rating")}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {tableData.map((row, index) => (
+                  <tr key={index}>
+                    <td>{row.id}</td>
+                    <td>{row.dateTime}</td>
+                    <td>{row.code}</td>
+                    <td>{row.review}</td>
+                    <td>{row.bugsFound}</td>
+                    <td>{row.rating}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
   );
 };
