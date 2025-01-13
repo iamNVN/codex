@@ -162,5 +162,6 @@
     }
     .regbackground {
         overflow-x: clip;
+    width: 100%;
     }
     }

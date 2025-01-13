@@ -92,7 +92,7 @@ const Register = () => {
                 <div className={styles.regshape}></div>
                 <div className={styles.regshape}></div>
             </div>
-            <form action={`${process.env.REACT_APP_HOST_URL}/api/register`}  method="post" className={styles.regform}>
+            <form action={`${process.env.REACT_APP_HOST_URL}api/register`}  method="post" className={styles.regform}>
                 <h3>Register</h3>
                 {errors.general && <span className={styles.regerror_title}>{errors.general}</span>}
                 <input

@@ -153,6 +153,7 @@
         width: 97%;
     }
     .background {
+        width: 100%;
         overflow-x: clip;
     }
     }

@@ -5,7 +5,7 @@ const Logout = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_HOST_URL}/api/logout`, {
+        fetch(`${process.env.REACT_APP_HOST_URL}api/logout`, {
             method: 'GET',
             credentials: 'include',
             headers: {

@@ -40,7 +40,7 @@ const Home = () => {
     const language = e.target.lang.value;
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_HOST_URL}/api/analyze`, {
+      const response = await fetch(`${process.env.REACT_APP_HOST_URL}api/analyze`, {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -70,7 +70,7 @@ const Home = () => {
   const { username, setUsername } = useContext(UserContext);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_HOST_URL}/api/home`, {
+    fetch(`${process.env.REACT_APP_HOST_URL}api/home`, {
       method: 'GET',
       credentials: 'include', // Include session cookies
       headers: {
@@ -102,88 +102,88 @@ const Home = () => {
 
   return (
     <div className={styles.BodyHome}>
-      <Navbar />
-      {/* <h3 className={styles.welcometxt}>Welcome, {username}!</h3> */}
-      <div className={styles.flexhome} style={{
-        display: 'flex',
-        marginRight: '40px',
-        gap: '10px',
-        marginTop: '60px',
-        justifyContent: 'space-between',
-      }}
-      >
-        <form onSubmit={handleSubmit} id="codeForm" className={styles.home_form}>
-          <span className={styles.error_title} id="errorreg"></span>
-          <h3 style={{
-            fontSize: '18px',
-            color: '#ffffffe8',
-            textAlign: 'left',
-            marginTop: '-25px',
-            marginBottom: '26px',
-          }}
-          >Code:</h3>
-          <textarea className={styles.home_textarea} placeholder="Paste your Code" rows="18" id="codeInput" name="codeInput" required></textarea>
-          <div style={{
-            display: 'flex',
-            marginTop: '20px',
-            justifyContent: 'space-between',
-          }}
-          >
-            <select name="lang" id="lang" className={styles.lang} style={{ marginRight: '12px' }}>
-              <option value="HTML">HTML</option>
-              <option value="css">CSS</option>
-              <option value="python">Python</option>
-              <option value="php">PHP</option>
-              <option value="javascript">JavaScript</option>
-              <option value="typescript">TypeScript</option>
-              <option value="dart">Dart</option>
-              <option value="java">Java</option>
-              <option value="ruby">Ruby</option>
-              <option value="swift">Swift</option>
-              <option value="kotlin">Kotlin</option>
-              <option value="c">C</option>
-              <option value="cpp">C++</option>
-              <option value="csharp">C#</option>
-              <option value="go">Go</option>
-              <option value="rust">Rust</option>
-              <option value="sql">SQL</option>
-              <option value="perl">Perl</option>
-              <option value="shell">Shell Script</option>
-              <option value="lua">Lua</option>
-            </select>
-            <button className={styles.analyze} type="submit" id="analyze" disabled={loading}>
-              {loading ? (
-                <span className={styles.loader}></span>
-              ) : (
-                <div></div>
-              )}
-              <span id='btntext' style={{ color: '#080710' }}>Analyze</span> </button>
+    <Navbar />
+    {/* <h3 className={styles.welcometxt}>Welcome, {username}!</h3> */}
+    <div className={styles.flexhome} style={{
+      display: 'flex',
+      marginRight: '40px',
+      gap: '10px',
+      marginTop: '60px',
+      justifyContent: 'space-between',
+    }}
+    >
+      <form onSubmit={handleSubmit} id="codeForm" className={styles.home_form}>
+        <span className={styles.error_title} id="errorreg"></span>
+        <h3 style={{
+          fontSize: '18px',
+          color: '#ffffffe8',
+          textAlign: 'left',
+          marginTop: '-25px',
+          marginBottom: '26px',
+        }}
+        >Code:</h3>
+        <textarea className={styles.home_textarea} placeholder="Paste your Code" rows="18" id="codeInput" name="codeInput" required></textarea>
+        <div className={styles.home_analyzeflex} style={{
+          display: 'flex',
+          marginTop: '20px',
+          justifyContent: 'space-between',
+        }}
+        >
+          <select name="lang" id="lang" className={styles.lang} style={{ marginRight: '12px' }}>
+            <option value="HTML">HTML</option>
+            <option value="css">CSS</option>
+            <option value="python">Python</option>
+            <option value="php">PHP</option>
+            <option value="javascript">JavaScript</option>
+            <option value="typescript">TypeScript</option>
+            <option value="dart">Dart</option>
+            <option value="java">Java</option>
+            <option value="ruby">Ruby</option>
+            <option value="swift">Swift</option>
+            <option value="kotlin">Kotlin</option>
+            <option value="c">C</option>
+            <option value="cpp">C++</option>
+            <option value="csharp">C#</option>
+            <option value="go">Go</option>
+            <option value="rust">Rust</option>
+            <option value="sql">SQL</option>
+            <option value="perl">Perl</option>
+            <option value="shell">Shell Script</option>
+            <option value="lua">Lua</option>
+          </select>
+          <button className={styles.analyze} type="submit" id="analyze" disabled={loading}>
+            {loading ? (
+              <span className={styles.loader}></span>
+            ) : (
+              <div></div>
+            )}
+            <span id='btntext' style={{ color: '#080710' }}>Analyze</span> </button>
+        </div>
+      </form>
+      <div className={styles.feedback}>
+        <h3>Results:</h3>
+        <span className={styles.error_title} id="errorreg"></span>
+        <div id="results" className={styles.custom_textarea} tabindex="0">
+          <ReactMarkdown>
+            {results}</ReactMarkdown></div>
+        <div className={styles.home_resultsflex} style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          padding: '5px 10px',
+        }}
+        >
+          <div style={{ float: 'left' }}>
+            <span id="" className={styles.span_title}>Bugs Found: </span>
+            <span className={styles.span_value} id="bugsFound">{bugsFound}</span>
           </div>
-        </form>
-        <div className={styles.feedback}>
-          <h3>Results:</h3>
-          <span className={styles.error_title} id="errorreg"></span>
-          <div id="results" className={styles.custom_textarea} tabindex="0">
-            <ReactMarkdown>
-              {results}</ReactMarkdown></div>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            padding: '5px 10px',
-          }}
-          >
-            <div style={{ float: 'left' }}>
-              <span id="" className={styles.span_title}>Bugs Found: </span>
-              <span className={styles.span_value} id="bugsFound">{bugsFound}</span>
-            </div>
-            <div style={{ float: 'right' }}>
-              <span id="" className={styles.span_title}>Rating: </span>
-              <span className={styles.span_value} id="codeRating">{rating}</span>
-            </div>
+          <div style={{ float: 'right' }}>
+            <span id="" className={styles.span_title}>Rating: </span>
+            <span className={styles.span_value} id="codeRating">{rating}</span>
           </div>
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

@@ -339,12 +339,19 @@ code {
   
   .home_form {
     width: auto;
+    height: 100%;
+    padding-bottom: 30px;
     margin: 0;
+  }
+  .home_textarea {
+    height: 300px;
+    font-size: 12px;
   }
 
   .feedback {
     width: auto;
-    height: 390px;
+    height: 100%;
+    padding-bottom: 30px;
     margin-top: 40px;
   }
 
@@ -352,4 +359,41 @@ code {
     height: 360px;
     margin-bottom: 12px;
   }
+  h3 {
+    font-size: 14px !important;
+  }
+  .analyze {
+    font-size: 14px;
+    padding: 0 20px;
+  }
+  .lang {
+    padding: 15px 14px;
+  }
+  option {
+    
+    font-size: 14px;
+  }
 }  
+
+@media (max-width: 400px){
+  .home_analyzeflex{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .analyze {
+    padding: 15px 14px;
+    width: 100%;
+  }
+  .lang {
+    width: 100%;
+  }
+  .home_resultsflex{
+    flex-direction: row;
+    gap: 16px;
+    padding-top: 10px !important;
+    align-items: center;
+  }
+  .span_title,.span_value {
+    font-size: 12px;
+  }
+}

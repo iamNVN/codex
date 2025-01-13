@@ -41,7 +41,7 @@ const Settings = () => {
         const message = e.target.message.value;
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_HOST_URL}/api/support`, {
+            const response = await fetch(`${process.env.REACT_APP_HOST_URL}api/support`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
@@ -95,7 +95,7 @@ const Settings = () => {
 
     useEffect(() => {
         // Fetch user details and histories
-        fetch(`${process.env.REACT_APP_HOST_URL}/api/home`, {
+        fetch(`${process.env.REACT_APP_HOST_URL}api/home`, {
             method: 'GET',
             credentials: 'include', // Include session cookies
             headers: {
@@ -131,7 +131,7 @@ const Settings = () => {
             <div style={{ padding: "0px 20px" }} className={styles.Supportcont}>
                 <div className={styles.loader} style={{ display: loading ? 'none' : 'none' }}></div>
                 <form onSubmit={handleSupportTicket} >
-                    <div style={{ color: "#fff", margin: "auto", display: "flex", justifyContent: "center", flexDirection: "column" }}>
+                    <div className={styles.formDiv}>
                         {/* <table  className={styles.settingsFormTable}>
                             <tr>
                             <label className={styles.settings_label}>Name:</label>
@@ -150,7 +150,7 @@ const Settings = () => {
                             <input type="text" placeholder="Username" id="username" name="uname" required className={styles.settings_input} />
                             </tr>
                         </table> */}
-                        <div style={{ display: "flex", padding: "0 110px" }}>
+                        <div className={styles.inputFlexgrp}>
                             <div className={styles.settings_formgrp}>
                                 <label className={styles.settings_label}>Name:</label>
                                 <input type="text" id="name" name="name" required className={styles.settings_input} />
