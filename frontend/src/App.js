@@ -4,7 +4,6 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Logout from './components/Logout';
 import History from './pages/History';
-import Settings from './pages/Settings';
 import Support from './pages/Support'
 import './styles/Navbar.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
@@ -23,7 +22,6 @@ function App() {
           {/* Pages */}
           <Route path="/dashboard" element={<Home />} />
           <Route path="/history" element={<History />} />
-          <Route path="/settings" element={<Settings />} />
           <Route path="/support" element={<Support />} />
           <Route path="/" element={<Login />} />
           <Route path="*" element={<Navigate to="/" />} />
