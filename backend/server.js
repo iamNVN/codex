@@ -13,7 +13,7 @@ const bcrypt = require('bcrypt');
 const app = express();
 
 // MongoDB Connection
-mongoose.connect("mongodb+srv://admin:fO11gXrkF5cjPigh@codex.11ixb.mongodb.net/", {
+mongoose.connect("mongodb+srv://admin:adef@codex.qefeqf.mongodb.net/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -71,10 +71,7 @@ app.use(
 ///======[OPEN AI]======///
 
 const apiKeys = [
-    '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',
-    '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',
-    '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',
-];
+    ];
 
 function getRandomApiKey() {
     return apiKeys[Math.floor(Math.random() * apiKeys.length)];
@@ -219,7 +216,7 @@ app.post('/api/support', async (req, res) => {
         return res.status(401).json({ error: 'Unauthorized: User not logged in' });
     }
 
-    const BOT_TOKEN = '1471512536:AAG--DOBtt51Ohd3Wm1Jt5Fp86LiIyal3BI';
+    const BOT_TOKEN = 'xx';
     const CHAT_ID = '1050176975';
     const message = `
 ðŸ’¼ *Contact - CodeX* \n\n
