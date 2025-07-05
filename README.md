@@ -1,5 +1,8 @@
 # 🧠 Codex
 
+
+![Login](https://iamnvn.in/static/media/Codex.png)
+
 **Codex** is an AI-powered code reviewer built during an internship in January 2025. It automates the code review process by identifying bugs, performance issues, and security concerns, and suggesting optimizations—all in real time.
 
 ## 🛠️ Features
