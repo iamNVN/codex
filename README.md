@@ -2,8 +2,6 @@
 
 **Codex** is an AI-powered code reviewer built during an internship in January 2025. It automates the code review process by identifying bugs, performance issues, and security concerns, and suggesting optimizations—all in real time.
 
----
-
 ## 🛠️ Features
 
 - 🔍 Real-time analysis of submitted code  
@@ -11,13 +9,9 @@
 - 🔐 Feedback on performance, security, and maintainability  
 - 🖥️ Built with the MERN stack: React, Node.js, MongoDB
 
----
-
 ## 🚀 Live Preview
 
 🌐 [See it live at codex.iamnvn.in](https://codex.iamnvn.in)
-
----
 
 ## Prerequisites
 
